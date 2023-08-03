@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>User Requests</title>
+    <style> 
+        .table td, .table th{
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .table th{
+            background: #2e2e2e;
+            color: #fff;
+        }
+        .tb{
+            height: 100%;
+            width: 1400px;
+            overflow: auto;
+        }
+        .tb{
+           padding: 10px; 
+        }
+        .activity{
+            height: 456px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <div class="activity">
+        <h1>Request</h1>
+
+        <div class="tb">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Topic Of Event</th>
+                    <th>Event Date</th>
+                    <th>Time of Event : From</th>
+                    <th>Time of Event : To</th>
+                    <!-- <th>Email</th> -->
+                    <th>Volunteer Required</th>
+                    <th>Guest Speaker</th>
+                    <th>Theme of Event</th>
+                    <th>Mic Required</th>
+                    <th>Projector</th>
+                    <th>Refreshment</th>
+                    <th>Status</th>
+                </tr>
+                <%for(let i=0; i<booking.length; i++){%>
+                    <tr>
+                        <td><%=booking[i].bname%></td>
+                        <td><%=booking[i].topic_event%></td>
+                        <td><%=booking[i].event_date%></td>
+                        <td><%=booking[i].event_time_from%></td>
+                        <td><%=booking[i].event_time_to%></td>
+                        <!-- <td><%=booking[i].email%></td> -->
+                        <td><%=booking[i].volunter_req%></td>
+                        <td><%=booking[i].guest_speaker_name%></td>
+                        <td><%=booking[i].theme_of_event%></td>
+                        <td><%=booking[i].mic_req%></td> 
+                        <td><%=booking[i].projector%></td>
+                        <td><%=booking[i].refreshment%></td>
+                        <td><%=booking[i].request%></td>
+                    </tr>
+                <%}%> 
+            </table>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

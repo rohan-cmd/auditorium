@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}  
+/* Navigation Css */
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+/* Responsive Navigation Bar Css */
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 960px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: #FB923C;
+  }
+}
+/* Footer Css */
+footer{
+    background: #1b1b1b;
+    height: auto;
+    width: 100vw;
+    padding-top: 17px;
+    color: #fff;
+    margin-top: 25px;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color: #FB923C;
+}
+.footer-content p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    padding: 0px 20px 20px 20px;
+}
+/* ------------------------------ Start Writing Your Css From Here ------------------------------ */
+.mid-content{
+  display: flex;
+  padding: 20px;
+}
+.mid-text{
+  width: 50%;
+  padding: 50px;
+  text-align: left;
+}
+.mid-text p,h1,.button{
+  margin: 15px;
+}
+.mid-text p{
+  margin-bottom: 35px;
+}
+.mid-text h1{
+  color: #1b1b1b;
+}
+.mid-text .button a{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid #fff;
+  background: #111;
+  border-radius: 15px;
+  padding: 10px;
+}
+.mid-text .button a:hover{
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+}
+.mid-text p{
+  font-size: 20px; 
+}
+/* Image */
+.mid-img{
+  display: block;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+.mid-img img{
+  height: 80%;
+  width: 80%;
+}
+/* Mid Content 1 */
+.mid-content-1{
+  height: 300px;
+  width: 100%;
+}
+/* 2 */
+#ct-2-text{
+  padding: 0px;
+}
+#ct-2-text p{
+  font-size: 18px;
+}
+/* 3 */
+.content-3{
+  text-align: center;
+  padding: 20px;
+  background: #1b1b1b;
+}
+.contenr-3-heading{
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+}
+.content-3-boxes{
+  padding: 20px;
+  display: flex;
+  margin: auto;
+  width: 80%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.box{
+  border: 4px solid #fff;
+  padding: 20px;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #fff;
+  width: 160px;
+}
+/* Responsive Middle Content */
+@media (max-width: 1050px) {
+  .mid-img img{
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .mid-content{
+    flex-direction: column;
+  }
+  .mid-text{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  .mid-img{
+    display: block;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+  }
+}

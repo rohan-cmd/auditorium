@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Book Hall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+ 
+<style></style>
+<body>
+    <!-- Navigation Bar -->
+    <%- include('../partials/nav') %>
+    <div class="container">
+        <header>Event Details</header>
+
+        <form action="/booking" method="POST">
+            <div class="form first">
+
+                <div class="details ID">
+
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label>Name</label>
+                            <input type="text" placeholder="Name" name="bname" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Topic Of Event</label>
+                            <input type="text" placeholder="Topic Of Event" name="topic_event" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Event Date</label>
+                            <input type="date" placeholder="Enter Date" name="event_date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Time of Event : From</label>
+                            <input type="time" placeholder="From" name="event_time_from" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Time of Event : To</label>
+                            <input type="time" placeholder="To" name="event_time_to" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enail" name="email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Volunteer Required</label>
+                            <select name="volunter_req" required>
+                                <!-- {{!-- <option disabled selected>Select</option> --}} -->
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Guest Speaker</label>
+                            <input type="text" placeholder="Guest Speaker Name" name="guest_speaker_name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Theme of Event</label>
+                            <input type="text" placeholder="Theme of Event" name="theme_of_event" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mic Required</label>
+                            <select name="mic_req" required>
+                                <!-- {{!-- <option disabled selected>Select</option> --}} -->
+                                <option>1</option> 
+                                <option>2</option>
+                                <option>2+</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Projector</label>
+                            <select name="projector" required>
+                                <!-- {{!-- <option disabled selected>Select</option> --}} -->
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Refreshment</label>
+                            <select name="refreshment" required>
+                                <!-- {{!-- <option disabled selected>Select</option> --}} -->
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+        </form>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

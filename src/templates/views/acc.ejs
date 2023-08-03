@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Dashboard Panel</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <style>
+        .table td,
+        .table th {
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .table th {
+            background: #2e2e2e;
+            color: #fff;
+        }
+
+        .tb {
+            height: 100%;
+            width: 1100px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <span class="logo_name">CCC Booking</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="/dashboard">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Pending</span>
+                    </a></li>
+                <li><a href="/acc">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">Accepted</span> 
+                    </a></li>
+                <li><a href="/rej">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">Rejected</span>
+                    </a></li>
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="/logout0">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+
+                <div class="mode-toggle">
+                </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+        </div>
+
+        <div class="dash-content">
+
+
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Requests</span>
+                </div>
+
+                <div class="tb">
+                    <table class="table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Topic Of Event</th>
+                            <th>Event Date</th>
+                            <th>Time of Event : From</th>
+                            <th>Time of Event : To</th>
+                            <th>Email</th>
+                            <th>Volunteer Required</th>
+                            <th>Guest Speaker</th>
+                            <th>Theme of Event</th>
+                            <th>Mic Required</th>
+                            <th>Projector</th>
+                            <th>Refreshment</th>
+                            <th>Current Time</th>
+                            <th>Status</th>
+                        </tr>
+                        <%for(let i=0; i<booking.length; i++){%>
+                            <%if(booking[i].request=="ACCEPTED"){%>
+                                <tr>
+                                    <td>
+                                        <%=booking[i].bname%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].topic_event%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].event_date%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].event_time_from%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].event_time_to%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].email%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].volunter_req%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].guest_speaker_name%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].theme_of_event%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].mic_req%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].projector%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].refreshment%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].current_time%>
+                                    </td>
+                                    <td>
+                                        <%=booking[i].request%>
+                                    </td>
+                                </tr>
+                                <%}%>
+                                    <%}%>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
